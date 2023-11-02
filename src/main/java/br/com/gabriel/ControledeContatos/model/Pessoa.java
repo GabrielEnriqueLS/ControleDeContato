@@ -1,44 +1,33 @@
 package br.com.gabriel.ControledeContatos.model;
 
 import jakarta.persistence.*;
-
-import java.util.Objects;
+import java.util.List;
 
 
 @Entity
-@Table(name = "pessoa")
 public class Pessoa {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+
+    //eu errei o nome no sql ai fico come XD
+
+    @Column(name = "come",nullable = false)
     private String nome;
-    @Column(nullable = false)
+    @Column(name = "endereco",nullable = false)
     private String endereco;
-    @Column(nullable = false)
-    private Long cep;
-    @Column(nullable = false)
+    @Column(name = "cep",nullable = false)
+    private String cep;
+    @Column(name = "cidade",nullable = false)
     private String cidade;
+    @Column(name = "uf",nullable = false)
     private String uf;
 
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Contato> contatos;
 
-    //construtores:
-    public Pessoa(String nome, String endereco, Long cep, String cidade, String uf , Long id) {
-        this.nome = nome;
-        this.cidade = cidade;
-        this.endereco = endereco;
-        this.uf = uf;
-        this.id = id;
-        this.cep = cep;
-    }
+    // Getters and Setters
 
-    public Pessoa() {
-
-    }
-
-
-    //getters e setters
     public Long getId() {
         return id;
     }
@@ -63,13 +52,14 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-    public Long getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(Long cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
+
 
     public String getCidade() {
         return cidade;
@@ -87,16 +77,13 @@ public class Pessoa {
         this.uf = uf;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(id, pessoa.id) && Objects.equals(nome, pessoa.nome) && Objects.equals(endereco, pessoa.endereco) && Objects.equals(cep, pessoa.cep) && Objects.equals(cidade, pessoa.cidade) && Objects.equals(uf, pessoa.uf);
+    public List<Contato> getContatos() {
+        return contatos;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nome, endereco, cep, cidade, uf);
+    public void setContatos(List<Contato> contatos) {
+        this.contatos = contatos;
     }
+
+
 }

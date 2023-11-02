@@ -2,38 +2,25 @@ package br.com.gabriel.ControledeContatos.model;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
 
 @Entity
 @Table(name = "contato")
-public class Contatos {
-
+public class Contato {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "tipo_contato", nullable = false)
-    private int tipoContato; // 0 para Telefone, 1 para Celular
-    @Column(nullable = false)
+
+    @Column(name = "tipo_Contato",nullable = false)
+    private int tipoContato;
+
+    @Column(name = "contato",nullable = false)
     private String contato;
+
     @ManyToOne
-    @JoinColumn(name = "relacionamento")
-    private Pessoa relacionamento;
+    @JoinColumn(name = "pessoa_id")
+    private Pessoa pessoa;
 
 
-    //construtores:
-
-    public Contatos(int tipoContato, String contato, Long id) {
-        this.tipoContato = tipoContato;
-        this.contato = contato;
-        this.id = id;
-    }
-
-    public Contatos() {
-
-    }
-
-    // getters e Setters
     public Long getId() {
         return id;
     }
@@ -58,24 +45,11 @@ public class Contatos {
         this.contato = contato;
     }
 
-    public Pessoa getRelacionamento() {
-        return relacionamento;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setRelacionamento(Pessoa relacionamento) {
-        this.relacionamento = relacionamento;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Contatos contatos = (Contatos) o;
-        return Objects.equals(id, contatos.id) && Objects.equals(tipoContato, contatos.tipoContato) && Objects.equals(contato, contatos.contato) && Objects.equals(relacionamento, contatos.relacionamento);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, tipoContato, contato, relacionamento);
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 }
