@@ -47,7 +47,7 @@ Para começar a utilizar a API, siga estes passos:
    - Os endpoints estarão disponíveis em `http://localhost:8080/api/XXXX`.
 
 3. **Documentação da API**
-   - Tambem esta incompleta
+   - (Tambem esta incompleta)
    - Acesse `http://localhost:PORTA/api/swagger-ui.html` para explorar e entender os endpoints disponíveis.
 
 5. **Interagir com a API**
