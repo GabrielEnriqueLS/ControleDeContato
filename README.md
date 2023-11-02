@@ -48,7 +48,7 @@ Para começar a utilizar a API, siga estes passos:
 
 3. **Documentação da API**
    - (Tambem esta incompleta)
-   - Acesse `http://localhost:PORTA/api/swagger-ui.html` para explorar e entender os endpoints disponíveis.
+   - Acesse `http://localhost:8080/api/swagger-ui.html` para explorar e entender os endpoints disponíveis.
 
 5. **Interagir com a API**
    - Utilize um software de sua preferência (ex: Postman) para enviar requisições para os endpoints e gerenciar os dados de Pessoas e Contatos.
