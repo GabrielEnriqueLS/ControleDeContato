@@ -24,15 +24,18 @@ A API oferece os seguintes endpoints principais para interação com as entidade
 - `DELETE /pessoas/{id}`: Remove uma pessoa do sistema.
   
 
-  EXEMPLO
--{
-    -"nome": "Exemplo Pessoa",
-    -"endereco": "Rua Exemplo, 123",
-    -"cep": "12345-678",
-    -"cidade": "Cidade Exemplo",
-    -"uf": "UF",
-    -"contatos": null
--}
+## Exemplo de Estrutura de Pessoa para Criação
+
+```json
+{
+  "nome": "Exemplo Pessoa",
+  "endereco": "Rua Exemplo, 123",
+  "cep": "12345-678",
+  "cidade": "Cidade Exemplo",
+  "uf": "UF",
+  "contatos": null
+}
+```
 
 
 ### Contatos
