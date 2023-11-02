@@ -15,13 +15,25 @@ A API oferece os seguintes endpoints principais para interação com as entidade
 
 ### Pessoas 
 
-- 'Totalmente funcional(de alguma forma)'
+- "Totalmente funcional(de alguma forma)"
 
 - `GET /pessoas`: Recupera todas as pessoas cadastradas.
 - `GET /pessoas/{id}`: Recupera uma pessoa específica pelo ID.
 - `POST /pessoas`: Cria uma nova pessoa.
 - `PUT /pessoas/{id}`: Atualiza os dados de uma pessoa existente.
 - `DELETE /pessoas/{id}`: Remove uma pessoa do sistema.
+  
+
+  EXEMPLO
+{
+    "nome": "Exemplo Pessoa",
+    "endereco": "Rua Exemplo, 123",
+    "cep": "12345-678",
+    "cidade": "Cidade Exemplo",
+    "uf": "UF",
+    "contatos": null
+}
+
 
 ### Contatos
 
