@@ -25,14 +25,14 @@ A API oferece os seguintes endpoints principais para interação com as entidade
   
 
   EXEMPLO
-{
-    "nome": "Exemplo Pessoa",
-    "endereco": "Rua Exemplo, 123",
-    "cep": "12345-678",
-    "cidade": "Cidade Exemplo",
-    "uf": "UF",
-    "contatos": null
-}
+-{
+    -"nome": "Exemplo Pessoa",
+    -"endereco": "Rua Exemplo, 123",
+    -"cep": "12345-678",
+    -"cidade": "Cidade Exemplo",
+    -"uf": "UF",
+    -"contatos": null
+-}
 
 
 ### Contatos
